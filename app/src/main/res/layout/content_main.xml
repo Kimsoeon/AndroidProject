@@ -14,8 +14,8 @@
     <LinearLayout
         android:padding="5pt"
         android:layout_margin="5pt"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
         android:background="#fbfcad"
         android:orientation="vertical">
         <ListView

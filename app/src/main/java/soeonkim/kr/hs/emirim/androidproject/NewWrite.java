@@ -24,9 +24,9 @@ public class NewWrite extends AppCompatActivity {
 
         myHelper = new MyDBHelper(this);
 
-        save_but = (Button)findViewById(R.id.save_but);
-        edit_text_title = (EditText)findViewById(R.id.edit_text_title);
-        edit_text_contents = (EditText)findViewById(R.id.edit_text_contents);
+        save_but = (Button) findViewById(R.id.save_but);
+        edit_text_title = (EditText) findViewById(R.id.edit_text_title);
+        edit_text_contents = (EditText) findViewById(R.id.edit_text_contents);
 
         save_but.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,5 +42,4 @@ public class NewWrite extends AppCompatActivity {
         });
 
     }
-
 }
