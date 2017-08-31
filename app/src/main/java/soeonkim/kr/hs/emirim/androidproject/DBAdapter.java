@@ -32,8 +32,19 @@ public class DBAdapter extends CursorAdapter{
         final TextView created_date = (TextView)view.findViewById(R.id.created_date);
         final TextView contents = (TextView)view.findViewById(R.id.contents);
 
-        title.setText(cursor.getString((cursor.getColumnIndex("title"))));
-        contents.setText(cursor.getString((cursor.getColumnIndex("contents"))));
+        if(cursor.getString((cursor.getColumnIndex("title"))).equals("")){
+            title.setText("제목없음");
+        }
+        else{
+            title.setText(cursor.getString((cursor.getColumnIndex("title"))));
+
+        }
+        if(cursor.getString((cursor.getColumnIndex("contents"))).equals("")){
+            contents.setText("내용없음");
+        }
+        else{
+            contents.setText(cursor.getString((cursor.getColumnIndex("contents"))));
+        }
         created_date.setText(cursor.getString((cursor.getColumnIndex("create_date"))));
 
     }

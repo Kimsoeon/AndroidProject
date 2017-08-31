@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void selectTable(){
         sqlDB = myHelper.getReadableDatabase();
-        String sql = "select * from noteTable";
+        String sql = "select * from noteTable order by _id desc";
 
         cursor = sqlDB.rawQuery(sql, null);
         if(cursor.getCount() > 0){
