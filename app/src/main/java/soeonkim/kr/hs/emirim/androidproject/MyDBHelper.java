@@ -10,7 +10,8 @@ class MyDBHelper extends SQLiteOpenHelper {
     }
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String sql = "create table noteTable(id integer primary key autoincrement, title text, contents text, create_date date)";
+        String sql = "create table noteTable(_id INTEGER PRIMARY KEY AUTOINCREMENT," +
+                " title text, contents text, create_date date)";
         //id INTEGER PRIMARY KEY AUTOINCREMENT,
         db.execSQL(sql); //DATETIME('NOW', 'LOCALTIME
     }

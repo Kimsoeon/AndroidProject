@@ -32,7 +32,7 @@ public class NewWrite extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sqlDB = myHelper.getWritableDatabase();
-                String sql = "insert into noteTable(title, contents, create_date) values('" + edit_text_title.getText() + "', '" + edit_text_contents.getText() + "', datetime('now','localtime'))";
+                String sql = "insert into noteTable values(NULL, '" + edit_text_title.getText() + "', '" + edit_text_contents.getText() + "', datetime('now','localtime'))";
                 sqlDB.execSQL(sql);
                 sqlDB.close();
                 Toast.makeText(NewWrite.this, "저장됨", Toast.LENGTH_LONG).show();
