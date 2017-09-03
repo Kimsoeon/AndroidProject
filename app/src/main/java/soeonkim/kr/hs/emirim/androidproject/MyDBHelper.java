@@ -16,7 +16,7 @@ class MyDBHelper extends SQLiteOpenHelper {
         db.execSQL(sql); //DATETIME('NOW', 'LOCALTIME
     }
     @Override
-    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+    public void onUpgrade(SQLiteDatabase db, int ocdldVersion, int newVersion) {
         String sql = "drop table if exists noteTable";
         db.execSQL(sql);
         onCreate(db);

@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListAdapter;
 import android.widget.ListView;
@@ -56,6 +57,21 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(MainActivity.this,NewWrite.class);
+                intent.putExtra("mode", "modify");
+                String _id =  ((TextView) view.findViewById(R.id._id)).getText().toString();
+                intent.putExtra("_id", _id);
+                String title =  ((TextView) view.findViewById(R.id.title)).getText().toString();
+                intent.putExtra("title", title);
+                String contents =  ((TextView) view.findViewById(R.id.contents)).getText().toString();
+                intent.putExtra("contents", title);
+
+                startActivity(intent);
+            }
+        });
 
     }
 
@@ -72,6 +88,7 @@ public class MainActivity extends AppCompatActivity {
 
 //        cursor.close();
 //        sqlDB.close();
+
     }
 
     @Override
